@@ -43,6 +43,7 @@ exports.addMovieReview = async (req, res) => {
     movieReviews[reviewId] = newReview;
     return res.send({ success: true, review: newReview });
   } catch (e) {
+    console.log(e);
     return res.status(500).send(e);
   }
 };
