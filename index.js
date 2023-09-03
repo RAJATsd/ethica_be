@@ -1,3 +1,11 @@
+import("node-fetch")
+  .then(({ default: fetch }) => {
+    globalThis.fetch = fetch;
+  })
+  .catch((error) => {
+    console.error("Error importing node-fetch:", error);
+  });
+
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
